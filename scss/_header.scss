@@ -1,0 +1,57 @@
+header {
+    background-color: #0C111B;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    button {
+        background-color: transparent;
+        color: #fff;
+        border: none;
+    }
+}
+
+.nav__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav__item {
+    margin-right: 19px;
+
+    select {
+        background-color: transparent;
+        color: white;
+        border: navajowhite;
+        outline: none;
+
+        option {
+            background-color: black;
+        }
+    }
+}
+
+.nav__form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    input {
+        border: none;
+        border-bottom: 1px solid #fff;
+        outline: none;
+        background-color: transparent;
+        color: white;
+    }
+
+    button {
+        background-color: transparent;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+}

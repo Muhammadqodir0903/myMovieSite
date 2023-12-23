@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Thin', sans-serif;
+    font-family: 'Roboto Light', sans-serif;
+    font-family: 'Roboto Medium', sans-serif;
+    font-family: 'Roboto Black', sans-serif;
+
+}
+
+ul,
+ol {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1130px;
+    margin: 0 auto;
+    padding: 0;
+}
