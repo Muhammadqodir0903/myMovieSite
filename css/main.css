@@ -47,6 +47,15 @@ header {
   border: none;
 }
 
+.nav__log {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav__log button {
+  padding: 20px;
+}
+
 .nav__list {
   display: flex;
   justify-content: space-between;

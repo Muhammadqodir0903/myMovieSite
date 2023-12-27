@@ -12,6 +12,15 @@ header {
         color: #fff;
         border: none;
     }
+
+}
+.nav__log{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    button{
+        padding: 20px;
+    }
 }
 
 .nav__list {
@@ -53,5 +62,9 @@ header {
         color: white;
         border: none;
         cursor: pointer;
+
     }
+
+    
 }
+

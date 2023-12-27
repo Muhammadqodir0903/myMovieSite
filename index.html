@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,39 +9,37 @@
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/main.css">
 </head>
-
 <body>
     <header>
         <div class="container">
             <nav class="nav">
+             <div class="nav__log">
                 <button>
                     <i class="bi bi-list"></i>
                 </button>
                 <a href="#">
                     <img src="./img/Logo (1).svg" alt="">
                 </a>
+             </div>
                 <ul class="nav__list">
                     <li class="nav__item">
-                        <select class="sel">
+                        <select onchange="fnYear(value)" class="sel">
                             <option value="" hidden>Select Year</option>
                             <option value="new">New</option>
                             <option value="old">Old</option>
                         </select>
                     </li>
                     <li class="nav__item">
-                        <select class="sel">
+                        <select onchange="fnRanting(value)" class="sel">
                             <option value="" hidden>Select Ranting</option>
-                            <option value="new">New</option>
-                            <option value="old">Old</option>
+                            <option value="max">Max</option>
+                            <option value="min">Min</option>
                         </select>
                     </li>
                     <li class="nav__item">
-                        <select class="sel">
+                        <select onchange="fnCategory(value)" class="sel__category">
                             <option value="" hidden>Category</option>
-                            <option value="action">Action</option>
-                            <option value="family">Family</option>
-                            <option value="drama">Drama</option>
-                            <option value="Comedy">Comedy</option>
+                           
                         </select>
                     </li>
                 </ul>
