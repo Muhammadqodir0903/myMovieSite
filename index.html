@@ -43,15 +43,20 @@
                         </select>
                     </li>
                 </ul>
-                <form action="#" class="nav__form">
-                    <input type="text" placeholder="Search movie" name="move">
-                    <button>
+                <form onsubmit="fnSearch(event)" action="#" class="nav__form">
+                    <input oninput="fnReset(value)" type="text" placeholder="Search movie" name="search">
+                    <button type="submit">
                         <i class="bi bi-search"></i>
                     </button>
                 </form>
             </nav>
         </div>
+        <div class="pagenation text-center">
+            
+            
+        </div>
     </header>
+
     <section class="hero">
         <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
