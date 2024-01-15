@@ -42,6 +42,9 @@
                            
                         </select>
                     </li>
+                    <li class="nav__item">
+                        <button onclick="fnMapLoc()" class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Saved<button>
+                    </li>
                 </ul>
                 <form onsubmit="fnSearch(event)" action="#" class="nav__form">
                     <input oninput="fnReset(value)" type="text" placeholder="Search movie" name="search">
@@ -56,6 +59,19 @@
             
         </div>
     </header>
+ 
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasRightLabel">Saved Movies</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+   <ul class="offcanvas-body__list">
+
+   </ul>
+  </div>
+</div>
 
     <section class="hero">
         <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
