@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,128 +10,146 @@
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/main.css">
 </head>
+
 <body>
-    <header>
-        <div class="container">
-            <nav class="nav">
-             <div class="nav__log">
-                <button>
-                    <i class="bi bi-list"></i>
-                </button>
-                <a href="#">
-                    <img src="./img/Logo (1).svg" alt="">
-                </a>
-             </div>
-                <ul class="nav__list">
-                    <li class="nav__item">
-                        <select onchange="fnYear(value)" class="sel">
-                            <option value="" hidden>Select Year</option>
-                            <option value="new">New</option>
-                            <option value="old">Old</option>
-                        </select>
-                    </li>
-                    <li class="nav__item">
-                        <select onchange="fnRanting(value)" class="sel">
-                            <option value="" hidden>Select Ranting</option>
-                            <option value="max">Max</option>
-                            <option value="min">Min</option>
-                        </select>
-                    </li>
-                    <li class="nav__item">
-                        <select onchange="fnCategory(value)" class="sel__category">
-                            <option value="" hidden>Category</option>
-                           
-                        </select>
-                    </li>
-                    <li class="nav__item">
-                        <button onclick="fnMapLoc()" class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Saved<button>
-                    </li>
-                </ul>
-                <form onsubmit="fnSearch(event)" action="#" class="nav__form">
-                    <input oninput="fnReset(value)" type="text" placeholder="Search movie" name="search">
-                    <button type="submit">
-                        <i class="bi bi-search"></i>
-                    </button>
-                </form>
-            </nav>
-        </div>
-        <div class="pagenation text-center">
-            
-            
-        </div>
-    </header>
- 
+    <div id="bigwrap" class="bigwrap">
+        <header>
+            <div class="container">
+                <nav class="nav">
 
-<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasRightLabel">Saved Movies</h5>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  </div>
-  <div class="offcanvas-body">
-   <ul class="offcanvas-body__list">
 
-   </ul>
-  </div>
-</div>
+                    <div class="nav__log">
+                        <button>
+                            <i class="bi bi-list"></i>
+                        </button>
+                        <a href="#">
+                            <img src="./img/Logo (1).svg" alt="">
+                        </a>
+                    </div>
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <select onchange="fnYear(value)" class="sel">
+                                <option value="" hidden>Select Year</option>
+                                <option value="new">New</option>
+                                <option value="old">Old</option>
+                            </select>
+                        </li>
+                        <li class="nav__item">
+                            <select onchange="fnRanting(value)" class="sel">
+                                <option value="" hidden>Select Ranting</option>
+                                <option value="max">Max</option>
+                                <option value="min">Min</option>
+                            </select>
+                        </li>
+                        <li class="nav__item">
+                            <select onchange="fnCategory(value)" class="sel__category">
+                                <option value="" hidden>Category</option>
 
-    <section class="hero">
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="./img/banner.png" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="./img/banner2.png" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="./img/banner3.png" class="d-block w-100" alt="...">
+                            </select>
+                        </li>
+                        <li class="nav__item">
+                            <button onclick="fnMapLoc()" class="btn btn-primary" type="button"
+                                data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                                aria-controls="offcanvasRight">Saved<button>
+                        </li>
+                    </ul>
+                    <form onsubmit="fnSearch(event)" action="#" class="nav__form">
+                        <input oninput="fnReset(value)" type="text" placeholder="Search movie" name="search">
+                        <button type="submit">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </form>
+                </nav>
+
+
+                <!-- Modal -->
+                <div class="modal fade  text-white" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content bg-dark text-white">
+
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <section class="movies">
-        <div class="container">
-            <ul class="movies__list">
+            <div class="pagenation text-center">
 
-            </ul>
-        </div>
-    </section>
-    <footer class="footer">
-        <div class="container">
-            <div class="info">
-                <ul class="info__list">
-                    <li class="info__item">
-                        <a href="">
-                            <img src="./img/facebook.png" alt="">
-                        </a>
-                    </li>
-                    <li class="info__item">
-                        <a href="">
-                            <img src="./img/insta.png" alt="">
-                        </a>
-                    </li>
-                    <li class="info__item">
-                        <a href="">
-                            <img src="./img/twitter.png" alt="">
-                        </a>
-                    </li>
-                    <li class="info__item">
-                        <a href="">
-                            <img src="./img/youtube.png" alt="">
-                        </a>
-                    </li>
+
+            </div>
+        </header>
+
+
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasRightLabel">Saved Movies</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="offcanvas-body__list">
+
                 </ul>
-                <span class="title">
-                    <h4 class="info__title">Conditions of Use</h4>
-                    <h4 class="info__title">Privacy & Policy</h4>
-                    <h4 class="info__title">Press Room</h4>
-                </span>
-                <span class="p">
-                    <p align="center">© 2022 MovieVilla by Tanmay Jitendra Thakare </p>
-                </span>
             </div>
         </div>
-    </footer>
+
+        <section class="hero">
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="./img/banner.png" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./img/banner2.png" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./img/banner3.png" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="movies">
+            <div class="container">
+                <ul class="movies__list">
+
+                </ul>
+            </div>
+        </section>
+        <footer class="footer">
+            <div class="container">
+                <div class="info">
+                    <ul class="info__list">
+                        <li class="info__item">
+                            <a href="">
+                                <img src="./img/facebook.png" alt="">
+                            </a>
+                        </li>
+                        <li class="info__item">
+                            <a href="">
+                                <img src="./img/insta.png" alt="">
+                            </a>
+                        </li>
+                        <li class="info__item">
+                            <a href="">
+                                <img src="./img/twitter.png" alt="">
+                            </a>
+                        </li>
+                        <li class="info__item">
+                            <a href="">
+                                <img src="./img/youtube.png" alt="">
+                            </a>
+                        </li>
+                    </ul>
+                    <span class="title">
+                        <h4 class="info__title">Conditions of Use</h4>
+                        <h4 class="info__title">Privacy & Policy</h4>
+                        <h4 class="info__title">Press Room</h4>
+                    </span>
+                    <span class="p">
+                        <p align="center">© 2022 MovieVilla by Tanmay Jitendra Thakare </p>
+                    </span>
+                </div>
+            </div>
+        </footer>
+    </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"

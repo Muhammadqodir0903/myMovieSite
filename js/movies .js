@@ -1,4 +1,17 @@
 let  movies = [
+  {
+    "Title": "Shum bola",
+    "fulltitle": "Shum bola (o'zbek film) | Шум бола (узбекфильм) 1977",
+    "movie_year": 1977,
+    "Categories": "Badiiy",
+    "summary": "Shum bola filmi",
+    "ImageURL": "https://i.ytimg.com/vi/IN_YECwjY6g/hq720.jpg?",
+    "imdb_id": "tt7026230",
+    "imdb_rating": 9.9,
+    "runtime": 66,
+    "language": "Ozbekcha",
+    "ytid": "IN_YECwjY6g"
+  },
     {
       "Title": "Patton Oswalt: Annihilation",
       "fulltitle": "Patton Oswalt: Annihilation (2017)",

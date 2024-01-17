@@ -3,6 +3,7 @@ let elMoveList = document.querySelector('.movies__list')
 let elSelCat = document.querySelector('.sel__category')
 let elOfcList = document.querySelector('.offcanvas-body__list')
 
+
 let saveLocData = []
 
 
@@ -23,8 +24,8 @@ function fnRender(data) {
             <p class="card-text">${item.movie_year}-yil</p>
             <p class="card-text">${item.imdb_rating}⭐️</p>
         <div class = "d-flex justify-content-between"> 
-           <a href="https://www.youtube.com/watch?v=${item.ytid}" class="btn btn-warning" target="_blank">Watch Movie</a>
-        <i onclick=" fnFavourite('${item.ytid}')" class="${JSON.parse(window.localStorage.getItem('saveData'))?.find(k=> k.ytid == item.ytid ) ? 'bi bi-bookmark-heart-fill' : 'bi bi-bookmark-heart'}"></i>
+           <button onclick=" fnsetId('${item.ytid}')" class="btn btn-warning"  data-bs-toggle="modal" data-bs-target="#exampleModal">More<i class="bi bi-arrow-up-right"></i></button>
+        <i onclick=" fnFavourite('${item.ytid}')" class="${JSON.parse(window.localStorage.getItem('saveData'))?.find(k => k.ytid == item.ytid) ? 'bi bi-bookmark-heart-fill' : 'bi bi-bookmark-heart'}"></i>
         </div>
             </div>
         </div>
@@ -96,32 +97,57 @@ if (window.localStorage.getItem('saveData')) {
     saveData = JSON.parse(window.localStorage.getItem('saveData'))
 }
 function fnFavourite(id) {
-    console.log(partMovies.find(k=> k == id));
+    console.log(partMovies.find(k => k == id));
     if (window.localStorage.getItem('saveData')) {
         saveData = JSON.parse(window.localStorage.getItem('saveData'))
     }
-    if (saveData.find(k=> k.ytid == id)) {
+    if (saveData.find(k => k.ytid == id)) {
         window.localStorage.setItem('saveData', JSON.stringify(saveData.filter(item => item.ytid != id)))
     } else {
-        saveData.push(partMovies.find(k=> k.ytid == id))
+        saveData.push(partMovies.find(k => k.ytid == id))
         window.localStorage.setItem('saveData', JSON.stringify(saveData))
 
     }
-    console.log(partMovies.find(k=> k.ytid == id));
+    console.log(partMovies.find(k => k.ytid == id));
     fnRender(partMovies)
 }
 
-function fnMapLoc(){
+function fnMapLoc() {
     elOfcList.innerHTML = ''
-   let data = JSON.parse( window.localStorage.getItem('saveData'))
-    data.map((item)=>{
+    let data = JSON.parse(window.localStorage.getItem('saveData'))
+    data.map((item) => {
         let newLi = document.createElement('li')
         newLi.style.height = '40px'
         newLi.innerHTML = `      <a href="https://www.youtube.com/watch?v=${item.ytid}"  target="_blank" class="d-flex justify-content-between h-100 w-100  border text-decoration: none">
-        <img class="h-100"src="https://i.ytimg.com/vi/${item.ytid}/hqdefault.jpg?" class="card-img-top" alt="...">
-    <h3 class="pe-4">${item.Title.toString().slice(0,15)}</h3>
+        <img class="h-100" src="https://i.ytimg.com/vi/${item.ytid}/hqdefault.jpg?" class="card-img-top" alt="...">
+    <h3 class="pe-4">${item.Title.toString().slice(0, 15)}</h3>
     </a>`
-    
-    elOfcList.appendChild(newLi)
+
+        elOfcList.appendChild(newLi)
     })
 }
+
+let ModContent = document.querySelector('.modal-content')
+
+function fnsetId(id) {
+    let item = partMovies.find((i) => i.ytid == id)
+    ModContent.innerHTML = `        <div class="modal-header">
+    <h2 class="modal-title fs-5" id="exampleModalLabel"> ${item.Title}</h2>
+    <button type="button" class="btn-close btn-light" data-bs-dismiss="modal" aria-label="Close"></button>
+  </div>
+  <div  class="modal-body bg-dark text-white text">
+  <iframe width="460px" height="300px" src="https://www.youtube.com/embed/${item.ytid}" title="${item.Title}" frameborder="3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+   <h3>
+   ${item.Categories}
+   </h3>
+   <p>
+   ${item.summary}
+   </p>
+   
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+    <a href="https://www.youtube.com/watch?v=${item.ytid}" target="_blank" class="btn btn-warning">Watch Movie</a>
+  </div>`
+}
+
